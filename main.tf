@@ -7,11 +7,11 @@ resource "kubernetes_namespace" "cicd" {
 resource helm_release argocd {
     name        = "argo"
     repository  = "https://argoproj.github.io/argo-helm"
-    chart       = "argo"
-    version     = "0.15.2"
-    namespace   = "cicd"
+    chart       = "argo-cd"
+    version     = "2.11.2"
+    namespace   = "kube-system"
 
-    values = [file("${path.module}/values.yaml"),]
+    values = [file("${path.module}/cd-values.yaml"),]
 }
 
 provider "kubernetes" {
