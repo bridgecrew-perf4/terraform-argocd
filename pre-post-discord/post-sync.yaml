@@ -10,18 +10,8 @@ spec:
     spec:
       containers:
       - name: discord-notification
-        image: curlimages/curl:latest
-        command:
-          - "curl"
-          - "-H"
-          - "\"Content-Type: application/json\""
-          - "-X"
-          - "POST"
-          - "-d"
-          - "'{\"content\":\"Deployment Success <@!534115621130993665>\"}'"
-          - "https://discord.com/api/webhooks/803780068546969600/p87B6fMQoCplQZODuc14nUgPYyFBL8jEyur8NObmyLXFPhSsB2h0jrp0gsM9sJqYUP3t"
-      - name: sleep
         image: alpine:latest
-        command: ["sleep", "30"]
+        command: ["/bin/sh","-c"]
+        args: ["apk add curl; curl -H \"Content-Type: application/json\" -X POST -d '{\"content\":\"Deployment Success <@!534115621130993665>\"}' https://discord.com/api/webhooks/803780068546969600/p87B6fMQoCplQZODuc14nUgPYyFBL8jEyur8NObmyLXFPhSsB2h0jrp0gsM9sJqYUP3t; sleep 20]
       restartPolicy: Never
   backoffLimit: 0
