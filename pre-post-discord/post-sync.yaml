@@ -20,5 +20,8 @@ spec:
           - "-d"
           - "'{\"content\":\"Deployment Success <@!534115621130993665>\"}'"
           - "https://discord.com/api/webhooks/803780068546969600/p87B6fMQoCplQZODuc14nUgPYyFBL8jEyur8NObmyLXFPhSsB2h0jrp0gsM9sJqYUP3t"
+      - name: sleep
+        image: alpine:latest
+        command: ["sleep", "30"]
       restartPolicy: Never
   backoffLimit: 0
