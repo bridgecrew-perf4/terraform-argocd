@@ -14,7 +14,7 @@ spec:
         app: flask-parameter-overrides
     spec:
       containers:
-      - image: OVERRIDE-IMAGES
+      - image: OVERRIDEIMAGES
         name: flask-experiment
         ports:
         - containerPort: 80
