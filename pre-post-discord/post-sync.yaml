@@ -13,15 +13,9 @@ spec:
         image: alpine:latest
         command: ["sleep", "10"]
       - name: discord-notification
-        image: curlimages/curl
+        image: busybox:latest
         command:
-          - "curl"
-          - "-H"
-          - "Content-Type: application/json"
-          - "-X"
-          - "POST"
-          - "-d"
-          - "'{\"content\":\"Deployment Success <@!534115621130993665>\"}'"
-          - "https://discord.com/api/webhooks/803780068546969600/p87B6fMQoCplQZODuc14nUgPYyFBL8jEyur8NObmyLXFPhSsB2h0jrp0gsM9sJqYUP3t"
+          - "apk add curl"
+          - "curl -H \"Content-Type: application/json\" -X POST -d '{\"content\":\"Deployment success! <@!534115621130993665>\"}' https://discord.com/api/webhooks/803780068546969600/p87B6fMQoCplQZODuc14nUgPYyFBL8jEyur8NObmyLXFPhSsB2h0jrp0gsM9sJqYUP3t"
       restartPolicy: Never
   backoffLimit: 0
