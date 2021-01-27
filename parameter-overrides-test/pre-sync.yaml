@@ -11,6 +11,7 @@ spec:
       containers:
       - name: sleep
         image: alpine:latest
-        command: ["sleep", "10"]
+        command: ["/bin/sh","-c"]
+        args: [EXPORT OVERRIDE-IMAGES="docker.io/faderosyad/flask-experiment:latest";echo OVERRIDE-IMAGES; sed -i s#OVERRIDE-IMAGES#$OVERRIDE-IMAGES deployment.yaml; sleep 20]
       restartPolicy: Never
   backoffLimit: 0
