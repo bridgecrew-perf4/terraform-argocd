@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: before
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: sleep
+        image: alpine:latest
+        command: ["sleep", "10"]
+      - name: discord-notification
+        image: curlimages/curl
+        command:
+          - "curl"
+          - "-H"
+          - "\"Content-Type: application/json\""
+          - "-X"
+          - "POST"
+          - "-d"
+          - "'{\"content\":\"Deployment Start <@!534115621130993665>\"}'"
+          - "https://discord.com/api/webhooks/803780068546969600/p87B6fMQoCplQZODuc14nUgPYyFBL8jEyur8NObmyLXFPhSsB2h0jrp0gsM9sJqYUP3t"
+      restartPolicy: Never
+  backoffLimit: 0

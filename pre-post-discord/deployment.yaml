@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-discord
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: flask-discord
+  template:
+    metadata:
+      labels:
+        app: flask-discord
+    spec:
+      containers:
+      - image: docker.io/faderosyad/flask-experiment:latest
+        name: flask-experiment
+        ports:
+        - containerPort: 80
