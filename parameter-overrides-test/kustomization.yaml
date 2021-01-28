@@ -1,8 +1,10 @@
 namePrefix: kustomize-
 
-resources:
+bases:
 - deployment.yaml
 - service.yaml
+
+resources:
 - post-sync.yaml
 - pre-sync.yaml
 - fail-sync.yaml
