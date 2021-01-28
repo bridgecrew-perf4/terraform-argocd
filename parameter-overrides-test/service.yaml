@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: flask-parameter-overrides
+  name: flask-parameter-overrides-test
 spec:
   ports:
   - port: 80
     targetPort: 2323
   selector:
-    app: flask-parameter-overrides
+    app: flask-parameter-overrides-test

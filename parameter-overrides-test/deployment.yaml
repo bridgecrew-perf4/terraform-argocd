@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-parameter-overrides
+  name: flask-parameter-overrides-test
 spec:
   replicas: 2
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: flask-parameter-overrides
+      app: flask-parameter-overrides-test
   template:
     metadata:
       labels:
-        app: flask-parameter-overrides
+        app: flask-parameter-overrides-test
     spec:
       containers:
       - image: OVERRIDEIMAGES
