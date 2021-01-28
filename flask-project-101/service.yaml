@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: flask-experiment
+  name: flask-project
 spec:
   ports:
   - port: 80
     targetPort: 2323
   selector:
-    app: flask-experiment
+    app: flask-project

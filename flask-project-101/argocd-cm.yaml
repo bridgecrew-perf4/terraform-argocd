@@ -7,6 +7,3 @@ metadata:
 data:
    # Enables application status badge feature
   statusbadge.enabled: 'true'
-
-  # Enables anonymous user access. The anonymous users get default role permissions specified argocd-rbac-cm.yaml.
-  users.anonymous.enabled: "true"

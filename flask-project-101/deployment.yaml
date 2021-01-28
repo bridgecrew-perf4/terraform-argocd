@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-experiment
+  name: flask-project
 spec:
   replicas: 2
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: flask-experiment
+      app: flask-project
   template:
     metadata:
       labels:
-        app: flask-experiment
+        app: flask-project
     spec:
       containers:
       - image: docker.io/faderosyad/flask-experiment:latest
-        name: flask-experiment
+        name: flask-project
         ports:
         - containerPort: 80
