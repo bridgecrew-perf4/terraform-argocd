@@ -27,8 +27,8 @@ controller:
   name: application-controller
 
   image:
-    repository: # argoproj/argocd
-    tag: # v1.7.6
+    repository: argoproj/argocd
+    tag: v1.8.3
     imagePullPolicy: # IfNotPresent
 
   # If changing the number of replicas you must pass the number as ARGOCD_CONTROLLER_REPLICAS as an environment variable
@@ -353,8 +353,8 @@ server:
     targetMemoryUtilizationPercentage: 50
 
   image:
-    repository: # argoproj/argocd
-    tag: # v1.7.6
+    repository: argoproj/argocd
+    tag: v1.8.3
     imagePullPolicy: # IfNotPresent
 
   ## Additional command line arguments to pass to argocd-server

@@ -9,7 +9,7 @@ resource helm_release argocd {
     repository  = "https://argoproj.github.io/argo-helm"
     chart       = "argo-cd"
     version     = "2.11.2"
-    namespace   = "kube-system"
+    namespace   = "cicd"
 
     values = [file("${path.module}/cd-values.yaml"),]
 }
