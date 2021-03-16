@@ -1,5 +1,5 @@
-# WIP sandbox-argocd-and-agroworkflow
-Sandboxing argo CD and argo workflow for learning purpose
+# sandbox-argocd
+Sandboxing argo CD for learning purpose
 
 ### Source:
 
