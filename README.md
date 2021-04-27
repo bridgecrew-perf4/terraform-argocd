@@ -1,4 +1,4 @@
-# sandbox-argocd
+# terraform-argocd
 Sandboxing argo CD using terraform as provisioner
 
 ### Source:
