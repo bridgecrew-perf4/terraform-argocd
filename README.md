@@ -1,5 +1,5 @@
 # sandbox-argocd
-Sandboxing argo CD for learning purpose
+Sandboxing argo CD using terraform as provisioner
 
 ### Source:
 
